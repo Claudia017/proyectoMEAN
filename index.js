@@ -26,7 +26,7 @@ usuariosAPI(app)
 pistasAPI(app)
 interaccionesAPI(app)
 
-const publicPath = path.join(__dirname, '../calmadiaria/public')
+const publicPath = path.join(__dirname, '../public')
 app.use(express.static(publicPath))
 
 app.get('*', (req, res) => {

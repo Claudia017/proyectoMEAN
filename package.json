@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "nodemon index.js",
-    "start": "concurrently \"node index.js\" \"npm run start-angular\"",
-    "start-angular": "cd ../calmadiaria && npm start"
-  },
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "serve": "nodemon index.js",
+  "start": "node index.js"
+}
+,
   "keywords": [],
   "author": "",
   "license": "ISC",

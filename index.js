@@ -22,17 +22,16 @@ mongoose.connect("mongodb+srv://cnsoliscoinf:CxSdfx2w2HfqIQrL@cluster0.xqyhh.mon
 }).then(() => console.log("Conectado a MongoDB Atlas"))
   .catch(err => console.error("Error de conexión:", err))
 
+const publicPath = path.join(__dirname, 'public')
+app.use(express.static(publicPath))
+
+const PORT = process.env.PORT || 8080
+app.listen(PORT, () => console.log(`Servidor corriendo en http://localhost:${PORT}`))
+
 usuariosAPI(app)
 pistasAPI(app)
 interaccionesAPI(app)
 
-const publicPath = path.join(__dirname, 'public')
-app.use(express.static(publicPath))
-
 app.get('*', (req, res) => {
     res.sendFile(path.join(publicPath, 'index.html'))
 })
-
-
-const PORT = process.env.PORT || 8080
-app.listen(PORT, () => console.log(`Servidor corriendo en http://localhost:${PORT}`))
